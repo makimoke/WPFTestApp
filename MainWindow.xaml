@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTestApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="400" Width="500">
+    <Grid Width="500">
+        <Label Content="姓:" HorizontalAlignment="Left" Margin="139,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="59"/>
+        <Label Content="名:" HorizontalAlignment="Left" Margin="272,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="89"/>
+        <TextBox x:Name="TextBox_Explanation" HorizontalAlignment="Left" Margin="83,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Height="61" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <Label Content="説明:" HorizontalAlignment="Left" Margin="83,187,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Button_Save" Content="保存" HorizontalAlignment="Left" Margin="355,303,0,0" VerticalAlignment="Top" Width="55" Click="Button_Save_Click" IsDefault="True"/>
+        <TextBox x:Name="TextBox_LastName" HorizontalAlignment="Left" Margin="139,82,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBox_FirstName" HorizontalAlignment="Left" Margin="272,82,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="性別:" HorizontalAlignment="Left" Margin="139,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="59"/>
+        <RadioButton x:Name="RadioButton_Male" Content="男" HorizontalAlignment="Left" Margin="139,145,0,0" VerticalAlignment="Top" GroupName="Sex" IsChecked="True"/>
+        <RadioButton x:Name="RadioButton_Female" Content="女" HorizontalAlignment="Left" Margin="199,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.839,0.604" GroupName="Sex"/>
 
     </Grid>
 </Window>
