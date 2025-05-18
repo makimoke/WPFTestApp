@@ -18,6 +18,14 @@ C#
 
 ReactiveProperty
 
+## 使用コントロール
+
+Button
+
+RadioButton
+
+TextBox
+
 ## 実装済み項目
 
 App.Configに入力内容を保存
