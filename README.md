@@ -24,6 +24,8 @@ Button
 
 RadioButton
 
+Label
+
 TextBox
 
 ## 実装済み項目
