@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfAppProject.MyListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppProject"
+        mc:Ignorable="d"
+        Title="たいとる" Height="600" Width="500"
+        SizeChanged="Window_SizeChanged">
+    <Grid Width ="500" Height="300">
+        <ListView x:Name="MyListView"
+            Height="{Binding ClientHeight}"
+            Width="{Binding ClientWidth}"
+            ItemsSource="{Binding PersonDatas}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="番号" DisplayMemberBinding="{Binding no}" Width="30"/>
+                    <GridViewColumn Header="氏名" DisplayMemberBinding="{Binding name}" Width="80"/>
+                    <GridViewColumn Header="生年月日" DisplayMemberBinding="{Binding birthday}" Width="80"/>
+                    <GridViewColumn Header="性別" DisplayMemberBinding="{Binding seibetu}" Width="30"/>
+                    <GridViewColumn Header="住所" DisplayMemberBinding="{Binding address}" Width="180"/>
+                    <GridViewColumn Header="電話番号" DisplayMemberBinding="{Binding phone}" Width="100"/>
+                    <GridViewColumn Header="メールアドレス" DisplayMemberBinding="{Binding mail}" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="197,329,0,-129" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>
