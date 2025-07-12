@@ -128,7 +128,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command_UnselectListItem.cs" />
     <Compile Include="MyListViewModel.cs" />
+    <Compile Include="SelectorSelectAllAction.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="MyListWindow.xaml.cs">
       <DependentUpon>MyListWindow.xaml</DependentUpon>
