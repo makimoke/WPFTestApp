@@ -5,12 +5,31 @@ using Reactive.Bindings;
 
 namespace WpfAppProject
 {
-    internal class ViewModel
+    internal class ViewModel : DependencyObject
     {
         public ReactiveProperty<string> FirstName { get; set; } = new ReactiveProperty<string>();
         public ReactiveProperty<string> LastName { get; set; } = new ReactiveProperty<string>();
         public ReactiveProperty<string> Explanation { get; set; } = new ReactiveProperty<string>();
         public ReactiveProperty<SexType> Sex { get; set; } = new ReactiveProperty<SexType>();
+
+        //依存関係プロパティ
+        public static readonly DependencyProperty DescribeProperty =
+            DependencyProperty.Register(
+                name: "Describe",
+                propertyType: typeof(string),
+                ownerType: typeof(ViewModel),
+                typeMetadata: new FrameworkPropertyMetadata("", new PropertyChangedCallback(OnDescribeChanged)));
+
+        private static void OnDescribeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            Console.WriteLine($"OnDescribeChanged:{e.OldValue}=>{e.NewValue}");
+        }
+
+        public string Describe
+        {
+            get => (string)GetValue(DescribeProperty);
+            set => SetValue(DescribeProperty, value);
+        }
 
         public void LoadData()
         {

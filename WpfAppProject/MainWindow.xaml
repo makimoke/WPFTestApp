@@ -12,7 +12,7 @@
         </Grid.Resources>
         <Label Content="姓:" HorizontalAlignment="Left" Margin="139,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="59"/>
         <Label Content="名:" HorizontalAlignment="Left" Margin="272,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="89"/>
-        <TextBox x:Name="TextBox_Explanation" Text="{Binding Explanation.Value, Mode=TwoWay}" HorizontalAlignment="Left" Margin="83,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Height="61" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="TextBox_Explanation" Text="{Binding Describe, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="83,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Height="61" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
         <Label Content="説明:" HorizontalAlignment="Left" Margin="83,187,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Button_Save" Content="保存" HorizontalAlignment="Left" Margin="355,303,0,0" VerticalAlignment="Top" Width="55" Click="Button_Save_Click" IsDefault="True"/>
         <TextBox x:Name="TextBox_LastName" Text="{Binding LastName.Value, Mode=TwoWay}" HorizontalAlignment="Left" Margin="139,82,0,0" VerticalAlignment="Top" Width="120"/>
@@ -20,6 +20,8 @@
         <Label Content="性別:" HorizontalAlignment="Left" Margin="139,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.268" Width="59"/>
         <RadioButton x:Name="RadioButton_Male" Content="男" HorizontalAlignment="Left" Margin="139,145,0,0" VerticalAlignment="Top" GroupName="Sex" IsChecked="{Binding Sex.Value, Converter={StaticResource B2E}, Mode=TwoWay, ConverterParameter=Male}" />
         <RadioButton x:Name="RadioButton_Female" Content="女" HorizontalAlignment="Left" Margin="199,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.839,0.604" GroupName="Sex" IsChecked="{Binding Sex.Value, Converter={StaticResource B2E}, Mode=TwoWay, ConverterParameter=Female}"/>
+        <TextBox x:Name="TextBox_Explanation2" Text="{Binding Describe, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="83,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Height="61" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
+
 
     </Grid>
 </Window>
