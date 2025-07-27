@@ -8,11 +8,31 @@
         mc:Ignorable="d"
         Title="たいとる" Height="600" Width="500"
         SizeChanged="Window_SizeChanged">
-    <Grid Width ="500" Height="300">
+    <Grid x:Name="MyGrid" Width ="500" Height="300">
         <ListView x:Name="MyListView"
             Height="{Binding ClientHeight}"
             Width="{Binding ClientWidth}"
             ItemsSource="{Binding PersonDatas}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="DarkGray"/>
+                            <Setter Property="Background" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.Style>
+                <Style TargetType="ListView">
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="Red"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Style>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="番号" DisplayMemberBinding="{Binding no}" Width="30"/>
@@ -28,7 +48,12 @@
         <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="197,329,0,-129" VerticalAlignment="Top" Width="75">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <local:SelectorSelectAllAction TargetSelector="{Binding ElementName=MyListView}" />
+                    <i:ChangePropertyAction TargetObject="{Binding ElementName=MyListView}"
+                                                PropertyName="IsEnabled">
+                        <i:ChangePropertyAction.Value>
+                            <Binding ElementName="MyListView" Path="IsEnabled" Converter="{StaticResource InvertBooleanConverter}" />
+                        </i:ChangePropertyAction.Value>
+                    </i:ChangePropertyAction>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
